@@ -1,0 +1,22 @@
+#include<reg51.h>
+sbit led=P3^7;
+void delayms ()
+{
+int a,b;
+for (a=0;a<1000;a++)
+{
+for(b=0;b<100;b++);
+}
+
+}
+
+void main(void)
+{
+ while(1)
+ {
+ led=0;
+ delayms();
+ led=1;
+ delayms();
+ }
+}

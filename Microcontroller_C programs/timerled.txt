@@ -1,0 +1,23 @@
+#include<reg51.h>
+sbit led = P3^7;
+int a=0;
+void fn (void) interrupt 3
+{
+ a++;
+ if(a==46)
+ {
+ led=~led;
+ a=0;
+}
+}			   
+void main(void)
+{
+led=0;
+TMOD=0x10;										                                                                                           
+TR1=1;
+EA=1;
+ET1=1;
+while(1)
+{} 
+}
+
